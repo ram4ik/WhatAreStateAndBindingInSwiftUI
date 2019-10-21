@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var isupside: Bool = true
+    
     var body: some View {
-        Text("Hello World")
+        VStack {
+            Text(isupside ? "🍎" : "🍌")
+                .font(.system(size: 150))
+            
+            // passed @State isupside to getToogle() as @Bingind ipupside
+            getToggle(isupside: $isupside)
+        }
     }
 }
 
@@ -19,3 +28,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
